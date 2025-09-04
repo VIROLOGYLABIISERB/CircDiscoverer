@@ -9,7 +9,7 @@ SRR11539497     FUS
 
 More importantly, the sra-toolkit will automatically download the cleaned paired or single-ended fastq file with low-quality reads and adaptors trimmed using fastp.
 
-## Running CIRI2 on the fastq file obtained
+## Running CIRI2 on the fastq file obtained (BWA2.sh)
 
 After the fastq files are obtained, they can be subjected to running CIRI2 to determine the circRNA using the script called BWA2.sh. Briefly, this script automatically analyzes the obtained single and paired-end reads to determine the length range within them. If the minimum length range of the reads in the files is less than 50nt, then this script can't run CIRI2 on it, if the length of reads is more than 50, then CIRI2 is executed on it, giving the respective output.
 
@@ -29,12 +29,9 @@ E.g., in the code in the script, i.e., awk '/^>/ {print; next} {print substr($0,
 
 ## Script to scan RNA motifs of proteins in the circRNA (find.py)
 
-To scan the RNA motifs in the circRNA sequences, the script is find.py. Briefly, users first need to make tab tab-separated file called motif.text of the pattern
-Motif	hgnc_symbol
-ATAATTA	AICF
-ATAATTG	AICF
+To scan the RNA motifs in the circRNA sequences, the script is find.py. Briefly, users first need to make tab tab-separated file called motif.text. The column 1 of the file will be Motif, where we take the repective motif sequences and column 2 will be hgnc_symbol, where ahead of the motif sequences will be the name of the proteins corresponding to the motifs
 
 
-Here, the Motif column represents the RNA motif,s and the hgnc_symbol represents the name of the Protein.
+Here, the Motif column represents the RNA motifs, and the hgnc_symbol represents the name of the Protein.
 
 
