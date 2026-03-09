@@ -1,5 +1,5 @@
 ## circDiscoverer
-circDiscoverer is a comprehensive database for exploring circRNA-Protein interactions.
+circDiscoverer is a Comprehensive Resource for exploring circRNA-Protein interactions.
 
 ## Required Softwares and tools
 - sra-toolkit (https://github.com/ncbi/sra-tools)  
