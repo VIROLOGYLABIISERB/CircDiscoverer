@@ -43,6 +43,9 @@ To scan the RNA motifs in the circRNA sequences, the script is find.py. Briefly,
 
 Here, the Motif column represents the RNA motifs, and the hgnc_symbol represents the name of the Protein.
 
+## ## Script to run STAR on the fastq files (MAP.sh)
+
+The script MAP.sh will automatically run the STAR on the Single and the paired-end files, and produce the Chimeric junction file for each of the fastq file, and the chimeric junction file should be immediately renamed to Chimeric.out.junction, that is then proceeded for finding circRNAs by CIRCexplorer2 using the script called circexplorer.sh
 
 ## Script to find circRNAs using circExplorer2 after running the STAR through MAP.sh
 After running the script MAP.sh, whatever chimeric junction file we will obtain, just rename each of the chimeric junction file to Chimeric.out.junction and run the circexplorer.sh, which will list all the circRNAs detected by circExplorer2
