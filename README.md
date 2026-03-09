@@ -5,7 +5,9 @@ circDiscoverer is a Comprehensive Resource for exploring circRNA-Protein interac
 - sra-toolkit (https://github.com/ncbi/sra-tools)  
 - bedtools (v2.26.0)  
 - CIRI2 (https://ciri-cookbook.readthedocs.io/en/latest/index.html)  
-- seqkit (v0.15.0)  
+- seqkit (v0.15.0)
+- CIRCexplorer2 and its requirements (https://circexplorer2.readthedocs.io/en/latest/tutorial/setup/)
+- STAR (2.7.11a)
 
 
 ## Downloading Accession from NCBI-SRA (SRA2.sh)
