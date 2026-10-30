@@ -1,8 +1,7 @@
-#!/bin/bash
+#!/usr/bin/bash
+
 
 file="sra.text"
-gtf="/media/aclab/Sreeram/data/CLIP/BULKSEQ/Homo_sapiens.GRCh38.112.gtf"
-ref="/media/aclab/Sreeram/CLIP/BULKSEQ/Homo_sapiens.GRCh38.dna.primary_assembly.fa"
 
 while IFS=$'\t' read -r SRR GENE; do
     echo "Processing: $SRR, GENE: $GENE"
@@ -27,7 +26,7 @@ while IFS=$'\t' read -r SRR GENE; do
 
     # Download and clean FASTQ files
     if [ "$single_end" = true ]; then
-        fasterq-dump --progress $SRR
+        fasterq-dump $SRR
         Input_file="${SRR}.fastq"
         Output_file="${GENE}_cleaned.fastq"
 
@@ -35,7 +34,7 @@ while IFS=$'\t' read -r SRR GENE; do
         fastp -i "$Input_file" -o "$Output_file"
 
     else
-        fasterq-dump --progress $SRR --split-files
+        fasterq-dump $SRR --split-files
         Input_file_R1="${SRR}_1.fastq"
         Input_file_R2="${SRR}_2.fastq"
         Output_file_R1="${GENE}_1_cleaned.fastq"
@@ -57,4 +56,3 @@ while IFS=$'\t' read -r SRR GENE; do
     echo "Finished processing $SRR for gene $GENE"
 
 done < "$file"
-
