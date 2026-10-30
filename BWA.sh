@@ -1,9 +1,8 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 # Paths to reference genome and annotation
-ref="/media/aclab/Sreeram/data/CLIP/mito/mitochondria_genome.fa"
-gtf="/media/aclab/Sreeram/data/CLIP/mito/Homo_sapiens.GRCh38.104.chr.gtf"
-CIRI_path="/home/aclab/CIRI_v2.0.6/CIRI2.pl"
+ref="/home/aclab/hg38.fa"
+CIRI_path="/home/aclab/apps/CIRI_v2.0.6/CIRI2.pl"
 
 # Check if the reference genome is indexed
 if [ -f "${ref}.bwt" ]; then
@@ -63,11 +62,10 @@ for file in *_cleaned.fastq; do
             echo "Processing $Outfile"
             gene="${Outfile%.Outfile}"
             new_outfile="new_${gene}.Outfile"
-            cut -f1 "$Outfile" > "$new_outfile"
+            awk '{print $1 "\t" $11 "\t" $5}' "$Outfile" > "$new_outfile"
         else
             echo "No .Outfile found for $file. Skipping."
         fi
     done
 
 done
-
