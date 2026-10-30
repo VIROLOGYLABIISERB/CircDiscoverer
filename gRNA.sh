@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Loop through all .150bp.fa files
-for files in *.150bp.fa; do
+# Loop through all .100bp.fa files
+for files in *.100bp.fa; do
     echo "The $files is present"
 
     # Extract the gene name
-    gene="${files%.backsplice.150bp.fa}"
+    gene="${files%.backsplice.100bp.fa}"
 
     echo "The sgrna file will be called ${gene}.sgrna.fa"
 
