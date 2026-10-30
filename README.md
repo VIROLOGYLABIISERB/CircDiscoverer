@@ -10,15 +10,21 @@ circDiscoverer is a Comprehensive Resource for exploring circRNA-Protein interac
 - STAR (2.7.11a)
 
 
-## Downloading Accession from NCBI-SRA (SRA2.sh)
-The script used for downloading the accession of any sequencing runs from the NCBI-SRA using the sra-toolkit is SRA2.sh.
+## Downloading Accession from NCBI-SRA (SRA.sh)
+The script used for downloading the accession of any sequencing runs from the NCBI-SRA using the sra-toolkit is SRA.sh.
 Briefly, to download the accessions using this script, users need to make a tab-separated text file called sra.text. E.g. if we want to download the run accessions of the CLIP data of a protein called FUS, the sra.text will contain as follows:
 
 SRR11539497     FUS
 
 More importantly, the sra-toolkit will automatically download the cleaned paired or single-ended fastq file with low-quality reads and adaptors trimmed using fastp.
 
-## Running CIRI2 on the fastq file obtained (BWA2.sh)
+Additionally, lets say we want to download the SRA accessions of a protein, say FUS, containing three biological replicates, e.g. SRR11539497, SRR11539498, SRR11539499, in that case the sra.text will be as follows :
+
+SRR11539497     FUS1
+SRR11539498     FUS2
+SRR11539499     FUS3
+
+## Running CIRI2 on the fastq file obtained (BWA.sh)
 
 After the fastq files are obtained, they can be subjected to running CIRI2 to determine the circRNA using the script called BWA2.sh. Briefly, this script automatically analyzes the obtained single and paired-end reads to determine the length range within them. If the minimum length range of the reads in the files is less than 50nt, then this script can't run CIRI2 on it, if the length of reads is more than 50, then CIRI2 is executed on it, giving the respective output.
 
