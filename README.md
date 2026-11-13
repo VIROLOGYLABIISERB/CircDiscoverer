@@ -16,7 +16,7 @@ Briefly, to download the accessions using this script, users need to make a tab-
 
 SRR11539497     FUS
 
-More importantly, the sra-toolkit will automatically download the cleaned paired or single-ended fastq file with low-quality reads and adaptors trimmed using fastp.
+More importantly, the sra-toolkit will automatically download the cleaned paired or single-ended fastq file with low-quality reads and adaptors trimmed using fastp. Lets say if SRR11539497 is a single-ended read, the output file will be FUS_cleaned.fastq and if its a paired-ended read, the output file will be FUS_1_cleaned.fastq and FUS_2_cleaned.fastq.
 
 Additionally, lets say we want to download the SRA accessions of a protein, say FUS, containing three biological replicates, e.g. SRR11539497, SRR11539498, SRR11539499, in that case the sra.text will be as follows :
 
